@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Lab1_Task2</string>
+    <string name="title_pancake_recipe">Best Fluffy Pancakes</string>
+    <string name="ingredients_title">Ingredients</string>
+    <string name="method_title">Method</string>
+    <string name="show_more_button_text">show more</string>
+    <string name="show_less_button_text">show less</string>
+    <string name="ingredient_1">Plain flour | 2 cups (290g)</string>
+    <string name="ingredient_2">Sugar | 1/4 cup (60g)</string>
+    <string name="ingredient_3">Baking powder | 4 teaspoons</string>
+    <string name="ingredient_4">Baking soda | 1/4 teaspoon</string>
+    <string name="ingredient_5">Salt | 1/2 teaspoon</string>
+    <string name="ingredient_6">Milk | 1 3/4 cups (440ml)</string>
+    <string name="ingredient_7">Butter | 1/4 cup (60g)</string>
+    <string name="ingredient_8">Vanilla extract | 2 teaspoons</string>
+    <string name="ingredient_9">Eggs | 1 large</string>
+    <string name="method_1">Co-mbine together the flour, sugar, baking powder, baking soda and salt in a large-sized bowl. Make a well in the centre and add the milk, slightly cooled melted butter, vanilla and egg.</string>
+    <string name="method_2">Use a wire whisk to whisk the wet ingredients together first before slowly folding them into the dry ingredients. Mix together until smooth</string>
+    <string name="method_3">Set the batter aside and allow to rest while heating up your pan</string>
+    <string name="method_4">Heat a nonstick pan or griddle over low-medium heat and wipe over with a little butter to lightly grease pan. Pour 1/4 cup of batter onto the pan and spread out gently into a round shape with the back of your ladle or measuring cup.</string>
+    <string name="method_5">When the underside is golden and bubbles begin to appear on the surface, flip with a spatula and cook until golden. Repeat with remaining batter.</string>
+    <string name="method_6">Serve with honey, maple syrup, fruit, ice cream or frozen yoghurt, or enjoy plain!</string>
+</resources>
