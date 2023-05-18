@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hkr.lab1_task2.databinding.ActivityMainBinding
 
@@ -14,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var ingredientAdapter: ListAdapter
     private lateinit var methodAdapter: ListAdapter
 
-    private var recipeExpanded = 0
+    private var recipeExpanded = View.GONE
 
     private val ingredients = listOf(
         R.string.ingredient_1,
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         binding.rvMethodList.layoutManager = LinearLayoutManager(this)
 
         binding.btnShowRecipe.setOnClickListener {
-            if(binding.recipeContainer.isShown){
+            if(binding.recipeContainer.isVisible){
                 binding.recipeContainer.visibility = View.GONE
                 binding.btnShowText.setText(R.string.show_more_button_text)
                 binding.btnShowRecipe.setImageResource(R.drawable.ic_baseline_expand_more_24)
@@ -72,50 +73,57 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        Log.i("Lifecycle", "onCreate was called")
+        Log.i("Lifecycle task2", "onCreate was called")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.i("Lifecycle", "onRestart was called")
+        Log.i("Lifecycle task2", "onRestart was called")
     }
 
     override fun onStart() {
         super.onStart()
         binding.recipeContainer.visibility = recipeExpanded
-        Log.i("Lifecycle", "onStart was called")
+        binding.btnShowText.setText(
+            if(binding.recipeContainer.isVisible)
+                R.string.show_less_button_text
+            else R.string.show_more_button_text
+        )
+        binding.btnShowRecipe.setImageResource(
+            if(binding.recipeContainer.isVisible)
+                R.drawable.ic_baseline_expand_less_24
+            else
+                R.drawable.ic_baseline_expand_more_24
+        )
+        Log.i("Lifecycle task2", "onStart was called")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.i("Lifecycle", "onResume was called")
+        Log.i("Lifecycle task2", "onResume was called")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.i("Lifecycle", "onPause was called")
+        Log.i("Lifecycle task2", "onPause was called")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.i("Lifecycle", "onStop was called")
+        Log.i("Lifecycle task2", "onStop was called")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.i("Lifecycle", "onDestroy was called")
+        Log.i("Lifecycle task2", "onDestroy was called")
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
-
-        outState?.run {
-            putInt(RECIPE_VISIBILITY, binding.recipeContainer.visibility)
-        }
-
+        outState.putInt(RECIPE_VISIBILITY, binding.recipeContainer.visibility)
         super.onSaveInstanceState(outState)
     }
 
     companion object {
-        val RECIPE_VISIBILITY = "recipeVisibility"
+        const val RECIPE_VISIBILITY = "recipeVisibility"
     }
 }

@@ -45,7 +45,7 @@
             android:insetTop="10dp"
             android:insetBottom="10dp"
             android:src="@drawable/ic_baseline_expand_more_24"
-            android:contentDescription="@null"
+            android:contentDescription="Show recipe button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnShowText" />
@@ -71,7 +71,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:paddingBottom="25dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_weight="1"
@@ -93,6 +93,15 @@
                 android:textColor="@color/CustomColor2"
                 android:textSize="18sp" />
 
+            <ImageView
+                android:id="@+id/ivIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:paddingVertical="25dp"
+                android:contentDescription="Picture of pancake ingredients"
+                app:srcCompat="@drawable/ingredients" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvIngredientsList"
                 android:layout_width="match_parent"
@@ -109,7 +118,18 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvMethodList"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" >
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <ImageView
+                android:id="@+id/ivPancakes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:paddingVertical="25dp"
+                android:contentDescription="Picture of pancakes"
+                app:srcCompat="@drawable/pancakes" />
 
         </LinearLayout>
 
